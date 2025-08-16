@@ -1,0 +1,99 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/RectangleArena.proto"
+
+WorldInfo {
+  basicTimeStep 16
+}
+Viewpoint {
+  orientation -0.32064192642248096 0.9418856588660377 0.1002006020070253 2.1
+  position 8.86779022404805 8.192435280970003 18.46605021247047
+  description "Vista principal"
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+DirectionalLight {
+  color 1 1 0.95
+  direction -0.3 -1 -0.4
+  intensity 0.9
+}
+Floor {
+  appearance PBRAppearance {
+    baseColorMap ImageTexture {
+      url [
+        "https://upload.wikimedia.org/wikipedia/commons/4/4c/Wood_texture.jpg"
+      ]
+    }
+    roughness 0.5
+    metalness 0
+  }
+}
+RectangleArena {
+  floorAppearance PBRAppearance {
+    baseColorMap ImageTexture {
+      url [
+        "https://upload.wikimedia.org/wikipedia/commons/e/e6/Running_track_texture.jpg"
+      ]
+    }
+  }
+}
+Solid {
+  translation 0 0.01 0
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 1 0 0
+        roughness 0.4
+      }
+      geometry Box {
+        size 0.1 0.001 10
+      }
+    }
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0 0 1
+        roughness 0.4
+      }
+      geometry Box {
+        size 10 0.001 0.1
+      }
+    }
+  ]
+}
+Robot {
+  translation 0 0.05 0
+  rotation 0 1 0 0
+  children [
+    Solid {
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.1 0.6 0.8
+            roughness 0.3
+          }
+          geometry Box {
+            size 0.3 0.05 0.2
+          }
+        }
+      ]
+    }
+    Solid {
+      translation 0 0.6 0
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0.8 0
+            roughness 0.3
+          }
+          geometry Capsule {
+            height 1.2
+            radius 0.02
+          }
+        }
+      ]
+    }
+  ]
+  controller "pendulo_controller"
+}
