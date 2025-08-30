@@ -1,0 +1,1 @@
+La carpeta lab 1 contiene todos los archivos con controladores del pendulo invertido, el archivo .pdf contiene el informe del laboratorio, la carpeta webots posee un espacio inicial para el laboratorio.
